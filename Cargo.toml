@@ -1,0 +1,17 @@
+[package]
+name = "spooky"
+version = "0.1.0"
+authors = ["Michael Woerister <michaelwoerister@posteo.net>"]
+description = """
+A small tool for rsyncing something to a remote destination and then executing
+something there, like a build script for example
+"""
+repository = "https://github.com/michaelwoerister/spooky"
+readme = "README.md"
+license = "MIT"
+
+
+[dependencies]
+uuid = { version = "0.2", features = ["v4"] }
+clap = "2.3"
+crc = "1.2"
