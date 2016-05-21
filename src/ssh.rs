@@ -50,11 +50,11 @@ fn mk_remote_dir(src_host_id: &str) -> OsString {
     arg
 }
 
-pub fn exec_remote_commands(src_directory: &Path,
-                            src_host_id: &str,
-                            dst_host_name: &OsStr,
-                            remote_command: &OsStr)
-                            -> Result<(), Error>
+pub fn exec_remote_command(src_directory: &Path,
+                           src_host_id: &str,
+                           dst_host_name: &OsStr,
+                           remote_command: &OsStr)
+                           -> Result<(), Error>
 {
     let mut command = Command::new("ssh");
     command.arg("-tt");

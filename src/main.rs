@@ -95,9 +95,11 @@ fn main()
             println!("Destination host name is: {}", dst_host_name.to_string_lossy());
         }
 
-        let remote_commands = arg_matches.value_of_os("remote command")
+        let remote_command = arg_matches.value_of_os("remote command")
                                          .unwrap();
-
+        if verbose {
+            println!("Remote command is: {}", remote_command.to_string_lossy());
+        }
         let src_host_id = try!(identifiers::src_host_id());
         let src_host_id = &src_host_id[..];
 
@@ -110,10 +112,10 @@ fn main()
                             src_host_id,
                             dst_host_name));
 
-            try!(ssh::exec_remote_commands(src_directory,
-                                           src_host_id,
-                                           dst_host_name,
-                                           remote_commands));
+            try!(ssh::exec_remote_command(src_directory,
+                                          src_host_id,
+                                          dst_host_name,
+                                          remote_command));
         }
         Ok(())
     })
