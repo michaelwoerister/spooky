@@ -57,10 +57,11 @@ fn exclude_from_arg(src_directory: &Path) -> Option<OsString>
         return None;
     }
 
+    let exclusion_file = exclusion_file.canonicalize().unwrap();
+
     let mut arg = OsString::new();
-    arg.push("--exclude-from='");
+    arg.push("--exclude-from=");
     arg.push(exclusion_file);
-    arg.push("'");
     Some(arg)
 }
 
