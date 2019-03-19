@@ -9,9 +9,8 @@ something there, like a build script for example
 repository = "https://github.com/michaelwoerister/spooky"
 readme = "README.md"
 license = "MIT"
+edition = "2018"
 
 
 [dependencies]
-uuid = { version = "0.2", features = ["v4"] }
-clap = "2.3"
-crc = "1.2"
+libc = "0.2.50"
