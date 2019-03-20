@@ -14,3 +14,4 @@ edition = "2018"
 
 [dependencies]
 libc = "0.2.50"
+toml = "0.5.0"
